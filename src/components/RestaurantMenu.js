@@ -3,20 +3,11 @@ import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { FOODLOGO_URL, MENU_URL } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
-  // const [resInfo, setresInfo] = useState(null);
   const { resId } = useParams();
-
-  // useEffect(() => {
-  //   fetchMenu();
-  // }, []);
-
-  // const fetchMenu = async () => {
-  //   const data = await fetch(MENU_URL + resId);
-  //   const json = await data.json();
-  //   setresInfo(json.data);
-  // };
+  const [showIndex, setshowIndex] = useState(0);
 
   const resInfo = useRestaurantMenu(resId);
 
@@ -33,14 +24,36 @@ const RestaurantMenu = () => {
         ?.categories[0].itemCards;
   }
 
-  console.log(itemCards);
+  let { cards } = resInfo.cards[4]?.groupedCard?.cardGroupMap?.REGULAR;
+  let categories = cards.filter((e) =>
+    e.card.card["@type"].includes("ItemCategory")
+  );
+
+  console.log(categories);
 
   return (
-    // <h1>Hello</h1>
-    <div className="menu">
-      <h1>{resInfo?.cards[2]?.card?.card?.info?.name}</h1>
-      <h3>{resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
-      <h3>{resInfo?.cards[2]?.card?.card?.info?.cuisines.join(" || ")}</h3>
+    <div className="menu text-center">
+      <h1 className="font-bold text-2xl my-6 mb-3">
+        {resInfo?.cards[2]?.card?.card?.info?.name}
+      </h1>
+      <h3 className="font-bold  text-lg">
+        {resInfo?.cards[2]?.card?.card?.info?.cuisines.join(" || ")}
+      </h3>
+      <h3 className="font-bold  text-lg">
+        {resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage}
+      </h3>
+
+      {categories.map((e, index) => {
+        return (
+          <RestaurantCategory
+            key={e.card.card.title}
+            data={e?.card?.card}
+            showItems={index === showIndex}
+            setshowIndex={() => setshowIndex(index)}
+          />
+        );
+      })}
+
       <h2>Menu</h2>
       <ul>
         {itemCards.map((e) => (
