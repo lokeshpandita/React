@@ -23,12 +23,14 @@ const Grocery = lazy(() => {
 
 const AppLayout = () => {
   return (
-    <Provider store={appStore}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </Provider>
+    <BrowserRouter basename="/React">
+      <Provider store={appStore}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 };
 
