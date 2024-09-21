@@ -24,10 +24,15 @@ class UserClass extends React.Component {
     // const { name } = json;
     return (
       <div className="user-card">
-        <h2>Name: {this.state.userInfo.name}</h2>
-        <h2>Joined on: {this.state.userInfo.created_at}</h2>
-        <h2>AVATAR:</h2>
-        <img className="img" src={this.state.userInfo.avatar_url}></img>
+        <h2 className="font-bold">Name: {this.state.userInfo.name}</h2>
+        <h2 className="font-bold">
+          Joined on: {this.state.userInfo.created_at}
+        </h2>
+        <h2 className="">AVATAR:</h2>
+        <img
+          className="img rounded-xl"
+          src={this.state.userInfo.avatar_url}
+        ></img>
       </div>
     );
   }

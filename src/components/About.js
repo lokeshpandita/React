@@ -11,8 +11,9 @@ class About extends React.Component {
   componentDidMount() {}
   render() {
     return (
-      <div>
-        <UserClass name={"Child 1"} />; Logged In User :{" "}
+      <div className="m-4 p-4">
+        <UserClass name={"Child 1"} />
+        Logged In User :{" "}
         <UserContext.Consumer>
           {(data) => <h1>{data.loggedInUser}</h1>}
         </UserContext.Consumer>

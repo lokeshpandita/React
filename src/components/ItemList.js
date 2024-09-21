@@ -14,7 +14,7 @@ const ItemList = (props) => {
           >
             <div className="w-9/12 p-4">
               <div>
-                <div className="pr-2">{e.card.info.name} </div>
+                <div className="pr-2 font-bold">{e.card.info.name} </div>
                 <div>
                   ₹
                   {e.card.info.price
