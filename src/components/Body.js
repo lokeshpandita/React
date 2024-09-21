@@ -81,10 +81,7 @@ const Body = () => {
 
       <div className="res-container flex flex-wrap items-stretch content-stretch justify-start">
         {filteredRestaurants.map((a) => (
-          <Link
-            to={"http://localhost:1234/restaurants/" + a.info.id}
-            key={a.info?.id}
-          >
+          <Link to={"/restaurants/" + a.info.id} key={a.info?.id}>
             {a.info.isOpen ? (
               <RestroCardOpen resData={a} />
             ) : (
