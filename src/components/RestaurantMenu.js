@@ -53,19 +53,6 @@ const RestaurantMenu = () => {
           />
         );
       })}
-
-      <h2>Menu</h2>
-      <ul>
-        {itemCards.map((e) => (
-          <li key={e.card.info.id}>
-            {e.card.info.name}
-            <br />
-            Price : {e.card.info.defaultPrice / 100}
-            <br />
-            <img src={FOODLOGO_URL + e?.card?.info?.imageId}></img>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
