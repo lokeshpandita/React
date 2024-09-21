@@ -2986,32 +2986,33 @@ const Grocery = /*#__PURE__*/ (0, _react.lazy)(()=>{
 });
 _c = Grocery;
 const AppLayout = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRedux.Provider), {
+    return(// <BrowserRouter basename="/React">
+    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRedux.Provider), {
         store: (0, _appStoreDefault.default),
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "app",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 29,
+                    lineNumber: 30,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/app.js",
-            lineNumber: 27,
+            lineNumber: 28,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app.js",
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 5
-    }, undefined);
+    }, undefined));
 };
 _c1 = AppLayout;
 // const AppLayout = () => {
@@ -3040,7 +3041,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 62,
+            lineNumber: 64,
             columnNumber: 14
         }, undefined),
         children: [
@@ -3048,7 +3049,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 66,
+                    lineNumber: 68,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3056,7 +3057,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 70,
+                    lineNumber: 72,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3064,7 +3065,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 74,
+                    lineNumber: 76,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3072,7 +3073,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurants/:resId",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 78,
+                    lineNumber: 80,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3080,7 +3081,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 82,
+                    lineNumber: 84,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3091,24 +3092,24 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                         children: "Loading..."
                     }, void 0, false, {
                         fileName: "src/app.js",
-                        lineNumber: 87,
+                        lineNumber: 89,
                         columnNumber: 31
                     }, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Grocery, {}, void 0, false, {
                         fileName: "src/app.js",
-                        lineNumber: 88,
+                        lineNumber: 90,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 87,
+                    lineNumber: 89,
                     columnNumber: 11
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 93,
+            lineNumber: 95,
             columnNumber: 19
         }, undefined)
     }
@@ -3118,7 +3119,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 99,
+    lineNumber: 101,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -36116,18 +36117,18 @@ const Body = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container flex flex-wrap items-stretch content-stretch justify-start",
                 children: filteredRestaurants.map((a)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "http://localhost:1234/restaurants/" + a.info.id,
+                        to: "/restaurants/" + a.info.id,
                         children: a.info.isOpen ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestroCardOpen, {
                             resData: a
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 89,
+                            lineNumber: 86,
                             columnNumber: 15
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restroCardDefault.default), {
                             resData: a
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 91,
+                            lineNumber: 88,
                             columnNumber: 15
                         }, undefined)
                     }, a.info?.id, false, {
