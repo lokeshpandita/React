@@ -1,9 +1,8 @@
 const Grocery = () => {
   return (
-    <div>
-      <h1>Online Grocery Store</h1>
-
-      <h2>Assume there are a lot of children under this component</h2>
+    <div className="p-4 m-4">
+      <h1 className="font-bold">Online Grocery Store</h1>
+      <h2>Coming Soon...</h2>
     </div>
   );
 };
